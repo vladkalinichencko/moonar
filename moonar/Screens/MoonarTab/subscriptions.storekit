@@ -1,0 +1,139 @@
+{
+  "identifier" : "1B2ECEAD",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+
+  ],
+  "settings" : {
+    "_applicationInternalID" : "1633032916",
+    "_developerTeamID" : "FK825CF827",
+    "_lastSynchronizedDate" : 702988849.70377302
+  },
+  "subscriptionGroups" : [
+    {
+      "id" : "21010637",
+      "localizations" : [
+
+      ],
+      "name" : "moonar full-time access",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "4.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "1640528182",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "subscription for 1 month",
+              "displayName" : "month subscription",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "month.subscription",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "month subscription",
+          "subscriptionGroupID" : "21010637",
+          "type" : "RecurringSubscription"
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "4.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "1640527012",
+          "introductoryOffer" : {
+            "internalID" : "4B8B6865",
+            "numberOfPeriods" : 1,
+            "paymentMode" : "free",
+            "subscriptionPeriod" : "P1W"
+          },
+          "localizations" : [
+            {
+              "description" : "subscription for 1 month with 7-day trial",
+              "displayName" : "month subscription with trial",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "month.subscription.trial",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "month subscription with trial",
+          "subscriptionGroupID" : "21010637",
+          "type" : "RecurringSubscription"
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "39.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "1640530787",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "subscription for 1 year",
+              "displayName" : "year subscription",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "year.subscription",
+          "recurringSubscriptionPeriod" : "P1Y",
+          "referenceName" : "year subscription",
+          "subscriptionGroupID" : "21010637",
+          "type" : "RecurringSubscription"
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "39.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "1640529497",
+          "introductoryOffer" : {
+            "internalID" : "E2DFF353",
+            "numberOfPeriods" : 1,
+            "paymentMode" : "free",
+            "subscriptionPeriod" : "P1W"
+          },
+          "localizations" : [
+            {
+              "description" : "subscription for 1 year with 7-day trial",
+              "displayName" : "year subscription with trial",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "year.subscription.trial",
+          "recurringSubscriptionPeriod" : "P1Y",
+          "referenceName" : "year subscription with trial",
+          "subscriptionGroupID" : "21010637",
+          "type" : "RecurringSubscription"
+        }
+      ]
+    }
+  ],
+  "version" : {
+    "major" : 2,
+    "minor" : 0
+  }
+}

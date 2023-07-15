@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Created with Vectornator (http://vectornator.io/) -->
+<svg height="100%" stroke-miterlimit="10" style="fill-rule:nonzero;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;" version="1.1" viewBox="0 0 1080 1080" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:vectornator="http://vectornator.io" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs/>
+<g id="Untitled" vectornator:layerName="Untitled">
+<path d="M40 540C40 263.858 263.858 40 540 40C816.142 40 1040 263.858 1040 540C1040 816.142 816.142 1040 540 1040C263.858 1040 40 816.142 40 540Z" fill="none" opacity="1" stroke="#43ff01" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="80"/>
+<path d="M893.27 680L186.73 680C187.447 681.812 188.18 683.618 188.926 685.42C208.023 731.523 236.013 773.414 271.299 808.701C306.586 843.987 348.477 871.977 394.58 891.074C440.684 910.171 490.098 920 540 920C589.902 920 639.316 910.171 685.42 891.074C731.523 871.977 773.414 843.987 808.701 808.701C843.987 773.414 871.977 731.523 891.074 685.42C891.82 683.618 892.553 681.812 893.27 680ZM160 540L190.92 540L160 540Z" fill="#43ff01" fill-rule="evenodd" opacity="1" stroke="none"/>
+<path d="M331 290C254.586 290 192.27 350.358 189.125 426L189 426L189 432L189 494L203.219 494L269 494L269 432L269 429.375L269.062 429.375C270.436 396.349 297.636 370 331 370C364.364 370 391.564 396.349 392.938 429.375L393 429.375L393 432L393 494L458.781 494L473 494L473 432L473 426L472.875 426C469.73 350.358 407.414 290 331 290Z" fill="#43ff01" fill-rule="nonzero" opacity="1" stroke="none"/>
+<path d="M750 290C673.586 290 611.27 350.358 608.125 426L608 426L608 432L608 494L622.219 494L688 494L688 432L688 429.375L688.062 429.375C689.435 396.349 716.636 370 750 370C783.364 370 810.564 396.349 811.938 429.375L812 429.375L812 432L812 494L877.781 494L892 494L892 432L892 426L891.875 426C888.73 350.358 826.414 290 750 290Z" fill="#43ff01" fill-rule="nonzero" opacity="1" stroke="none"/>
+</g>
+</svg>
