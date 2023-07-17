@@ -31,18 +31,18 @@ struct UserScreen: View {
 					} label: {
 						AudioThoughtWidget(name: "Your Audio Recordings", duration: $duration, currentTime: $currentTime)
 					}
-					
-//					NavigationLink {
-//						AdviceScreen(name: "moonar's pieces of advice")
-//					} label: {
-//						AdviceWidget(name: "moonar's pieces of advice")
-//					}
-//
-//					NavigationLink {
-//						TasksScreen(name: "Tasks for you")
-//					} label: {
-//						TaskWidget(name: "Tasks for you")
-//					}
+//Отсюда нужно будет закомментить
+					NavigationLink {
+						AdviceScreen(name: "moonar's pieces of advice")
+					} label: {
+						AdviceWidget(name: "moonar's pieces of advice")
+					}
+
+					NavigationLink {
+						TasksScreen(name: "Tasks for you")
+					} label: {
+						TaskWidget(name: "Tasks for you")
+					}
 				}
 			}
 			.accentColor(emotionColor)

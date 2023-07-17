@@ -7,6 +7,7 @@
 
 import SwiftUI
 import NaturalLanguage
+import CoreML
 
 struct MoonarScreen: View {
 	@State private var sessionName: SessionNames = .defaultSession
@@ -18,6 +19,7 @@ struct MoonarScreen: View {
 	@State private var isShowingSubscriptionWithTrialOfferSheet = false
 	
 	@State private var userTextInput = ""
+	@State private var userPreviousTextInput = ""
 	@State private var userAudioToTextInput = ""
 	@State private var userEmotions = [false, false, false, false, false, false]
 	@State private var userAudioThoughtName = ""
@@ -31,6 +33,10 @@ struct MoonarScreen: View {
 	@Binding var emotionColor: Color
 	@Binding var emotionTextColor: Color
 	
+	func generateAnswer() {
+
+	}
+	
 	func processBigTypeInFormInformation() {
 		if userTextInput == "" {
 			moonarActions.addAudioThought(name: userAudioThoughtName)
@@ -43,6 +49,9 @@ struct MoonarScreen: View {
 			}
 		}
 		
+		print("DELETED userAudioThoughtName AND userTextInput", userAudioThoughtName, userTextInput)
+		
+		userPreviousTextInput = userTextInput
 		userAudioThoughtName = ""
 		userTextInput = ""
 		
@@ -83,24 +92,30 @@ struct MoonarScreen: View {
 	
 	func desideSession() {
 		var sentence = ""
+		
 		if userTextInput == "" {
-			sentence = audioController.transcribedText
+			if userAudioThoughtName == "" {
+				sentence = userPreviousTextInput
+			}
+			else {
+				sentence = audioController.transcribedText
+			}
 		}
 		else {
 			sentence = userTextInput
 		}
 		
-		print("SENTENCE")
-		print(sentence)
+		print("DESIDE SESSION SENTENCE:", sentence)
 		
-		if let sentenceEmbedding = NLEmbedding.sentenceEmbedding(for: .english) {
+		if let sentenceEmbedding = NLEmbedding.sentenceEmbedding(for: .russian) {
 			var minDistance = 3.0
 			
 			for symptomDescription in symptomOptions {
 				let distance = sentenceEmbedding.distance(between: sentence, and: symptomDescription)
 				
 				minDistance = min(minDistance, Double(distance))
-				print("EMBEDDING", symptomDescription, distance)
+				
+				print("EMBEDDING:", symptomDescription, distance)
 			}
 			
 			for symptomDescription in symptomOptions {
@@ -108,12 +123,13 @@ struct MoonarScreen: View {
 					
 					recommendedSession = sessionSymptoms[symptomDescription]?.randomElement()
 					
-					print("THERAPY")
-					print(recommendedSession ?? "nothing")
+					print("THERAPY:", recommendedSession ?? "nothing")
+					print("MIN DISTANCE:", minDistance)
 				}
 			}
 			
-			print("SESSION AFTER:", recommendedSession ?? "")
+			print("SESSION AFTER:", recommendedSession ?? "nothing")
+			
 			sessionName = recommendedSession!
 		}
 	}

@@ -322,6 +322,7 @@ var player: AVAudioPlayer?
 
 class AudioViewModel: NSObject, ObservableObject, AVAudioPlayerDelegate {
 	@Published var transcribedText = ""
+	
 	var audioFileSystem = AudioThoughtViewModel(entityName: "AudioThought")
 	var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
 	var recognitionTask: SFSpeechRecognitionTask?
@@ -421,10 +422,12 @@ class AudioViewModel: NSObject, ObservableObject, AVAudioPlayerDelegate {
 				if let result = result {
 					isFinal = result.isFinal
 					
-					print(result.bestTranscription.formattedString)
-					print(omit)
+					print("SPEECH RECOGNITION RESULT:", result.bestTranscription.formattedString)
+					print("SPEECH RECOGNITION ITERATION:", omit)
 					
 					self.transcribedText = result.bestTranscription.formattedString
+					
+					print("TRANSCRIBED TEXT:", self.transcribedText)
 				}
 				
 				if error != nil || isFinal {
@@ -580,23 +583,32 @@ class MoonarViewModel: ObservableObject {
 	var audioController = AudioViewModel()
 	
 	func emotionClassification(text: String) -> EmotionalStates {
+		
+		print("EMOTION CLASSIFICATION INPUT:", text)
+		
 		var numericScore: Double = 0
 		let tagger = NLTagger(tagSchemes: [.tokenType, .sentimentScore])
 		tagger.string = text
 		
+		print("EMOTION CLASSIFICATION tagger:", tagger)
+		print("EMOTION CLASSIFICATION tagger.string:", tagger.string ?? "")
+		
 		tagger.enumerateTags(in: text.startIndex..<text.endIndex, unit: .paragraph, scheme: .sentimentScore, options: []) { sentiment, _ in
 			
+			print("EMOTION CLASSIFICATION sentiment:", sentiment ?? "")
+			
 			if let sentimentScore = sentiment {
-				
-				print(sentimentScore.rawValue)
-				
 				numericScore = Double(sentimentScore.rawValue)  ?? 0
 			}
 			
 			return true
 		}
 		
+		print("EMOTION CLASSIFICATION OUTPUT:", numericScore)
+		
 		emotionScore = numericScore
+		
+		print("EMOTION SCORE:", emotionScore)
 		
 		if numericScore <= -0.9 {
 			return .bad
